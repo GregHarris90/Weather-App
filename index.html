@@ -15,33 +15,37 @@
 
     <div class="container">
             <div class="row" id="main-row">
-                <div class="column-4" id=search-bar>
+                <div class="column-4" class="search-bar">
                     <div class="container">
-                        <h2>Search for a City:</h1>
-                        <input id="search-city" type="text" placeholder="Input City">
-                        <button type="submit" class="btn btn-primary fas fa-search"></button>
-                       
-                    <div id="pastSearch">empty div</div>
+                        <form id="search-form">
+                            <h2>Search for a City:</h2>
+                            <input id="search-input" type="text" placeholder="Input City">
+                            <button id="search-btn" type="submit" class="btn btn-primary fas fa-search"></button>
+                        </form>
+                        
+                        <div id="pastSearch"></div>
                     </div>
                 </div>
         
                 <div class="column-8" id="city-output">
                     <div class="container">
-                        <h2>City Output:</h2>
                         <section class="location">
                             <div class="city"></div>
                         </section>
                         <div class="current">
-                            <div class="temp"></div>
-                            <div class="humidity"></div>
-                            <div class="windspeed"></div>
-                            <div class="UVindex"></div>
+                            <div class="cityName">City:</div>
+                            <br>
+                            <div class="temp">Temperature:</div>
+                            <div class="humidity">Humidity:</div>
+                            <div class="windspeed">Wind Speed:</div>
+                            <div class="UVindex">UV Index:</div>
                         </div>
                         
+                        
+                        <h2>5 Day Forecast:</h2>
                         <ul class="forecast">
                         </ul>
                     </div>
-
                 </div>
             </div>
             
@@ -54,21 +58,7 @@
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
