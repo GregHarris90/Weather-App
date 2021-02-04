@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Weather App</title>
 </head>
+
 <body>
     <div class="jumbotron">
         <h1 id="header">Weather Dashboard</h1>
@@ -33,7 +34,7 @@
                             <div class="city"></div>
                         </section>
                         <div class="current">
-                            <div class="cityName">City:</div>
+                            <div>City: <span class="cityName"></span></div>
                             <br>
                             <div class="temp">Temperature:</div>
                             <div class="humidity">Humidity:</div>
@@ -41,22 +42,13 @@
                             <div class="UVindex">UV Index:</div>
                         </div>
                         
-                        
                         <h2>5 Day Forecast:</h2>
                         <ul class="forecast">
                         </ul>
                     </div>
                 </div>
             </div>
-            
         </div>
-        
-    
-    
-
-
-    </div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="script.js"></script>
