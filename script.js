@@ -30,8 +30,6 @@ function getApi(event) {
     pastSearch.textContent = cityInput;
     searchHistory.append(pastSearch)
 
-
-
     console.log(searchHistory);
 
 
