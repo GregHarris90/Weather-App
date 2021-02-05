@@ -11,11 +11,12 @@
 $(document).ready(function () {
 
 // document variables
-var forecast = document.querySelector("ul");
 var searchForm = document.querySelector("#search-form")
-
+var currentDay = moment().format("MMMM Do YYYY");
 // event listener on search button
 searchForm.addEventListener("submit", getApi);
+
+console.log("Current Day:",currentDay);
 
 // function to input city name and fetch data
 function getApi(event) {
@@ -32,13 +33,29 @@ function getApi(event) {
         url: requestURL,
         method: "GET",
     }).then(function (response) {
-        $(".cityName").text(response.name);
+        $(".cityName").text(response.name) + $(".currentDay").text(currentDay);
         $(".temp").text(response.main.temp);
         $(".humidity").text(response.main.humidity);
         $(".windspeed").text(response.wind.speed);
         $(".UVindex").text();
 
+
+
         console.log("Ajax Response");
+        console.log(response);
+    })
+
+
+    var forecast = document.querySelector("ul");
+    var requestForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
+
+    $.ajax({
+        url: requestForecast,
+        method: "GET",
+    }).then(function (response) {
+        $(".forecast").
+
+        console.log("Forecast Response");
         console.log(response);
     })
 
