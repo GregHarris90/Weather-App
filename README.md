@@ -13,6 +13,7 @@ Homework assignment for Week 6 of Coding Bootcamp!
 
 * LINK TO LIVE REPOSITORY*
 
+https://gregharris90.github.io/Weather-App/
 
 - This repository is for a web application to use a 'Weather Application' to search for a city and retrieve the weather, temperature, humidity, wind speed, UV (ultra-violet) index, and see the next 5 day forecast. 
 
