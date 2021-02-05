@@ -25,7 +25,7 @@ https://gregharris90.github.io/Weather-App/
 
 - The searched city will be added to a list of search history below the search bar.
 
-- In the main sextion of the page information about the city will be displayed. 
+- In the main section of the page information about the city will be displayed. 
 
 - Showing City/Date, Temperature, Humidity, Wind Speed, and UV Index.
 
