@@ -25,6 +25,16 @@ function getApi(event) {
     var cityInput = document.querySelector("#search-input").value;
     console.log (cityInput);
 
+    var searchHistory = $("#past-Search");
+    var pastSearch = document.createElement("li");
+    pastSearch.textContent = cityInput;
+    searchHistory.append(pastSearch)
+
+
+
+    console.log(searchHistory);
+
+
     // URL and API key variables
     var API_key = "0b351b99223ceb38cc5d35d442babfe4"
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + API_key + "";
