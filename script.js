@@ -26,13 +26,18 @@ function getApi(event) {
 
     // URL and API key variables
     var API_key = "0b351b99223ceb38cc5d35d442babfe4"
-    var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&appid=" + API_key + "";
+    var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + API_key + "";
     
     $.ajax({
         url: requestURL,
         method: "GET",
     }).then(function (response) {
         $(".cityName").text(response.name);
+        $(".temp").text(response.main.temp);
+        $(".humidity").text(response.main.humidity);
+        $(".windspeed").text(response.wind.speed);
+        $(".UVindex").text();
+
         console.log("Ajax Response");
         console.log(response);
     })
