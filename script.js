@@ -35,10 +35,11 @@ function getApi(event) {
     console.log(searchHistory);
 
 
-    // URL and API key variables
+    // Main URL and API key variables
     var API_key = "0b351b99223ceb38cc5d35d442babfe4"
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + API_key + "";
 
+    // ajax call for Main URL
     $.ajax({
         url: requestURL,
         method: "GET",
@@ -51,13 +52,24 @@ function getApi(event) {
         $(".humidity").text(response.main.humidity);
         $(".windspeed").text(response.wind.speed);
         $(".icon").attr("src", iconURL);
-        $(".UVindex").text();
 
+        var UVindex = "https://api.openweathermap.org/data/2.5/uvi?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&appid=" + API_key + "";
+
+        $.ajax({
+            url: UVindex,
+            method: "GET",
+        }).then(function (UVresponse) {
+            $(".UVindex").text(UVresponse.value);
         
 
+        console.log("UV Index Response:")
+        console.log(UVindex);
+        console.log("Icon Response:")
         console.log(iconURL);
-        console.log("Ajax Response");
+        console.log("Ajax Response:");
         console.log(response);
+
+        })
     })
 
 
