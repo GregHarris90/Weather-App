@@ -1,16 +1,17 @@
 // TODOS:
-// Display data to Main section UV Index)
 // Append list of 5 day forecast at bottom of screen
 // Create condition for UV Index box color
+// Fix search history and connect to local storage
 
 // ==========================================================================
 
-// Makes sure document is loaded, then runs main functions
+// Makes sure document is loaded
 $(document).ready(function () {
 
 // document variables
 var searchForm = document.querySelector("#search-form")
 var currentDay = moment().format("MMMM Do YYYY");
+
 // event listener on search button
 searchForm.addEventListener("submit", getApi);
 
@@ -20,19 +21,29 @@ console.log("Current Day:",currentDay);
 function getApi(event) {
     event.preventDefault();
 
-    // 
+    // variable for searched city
     var cityInput = document.querySelector("#search-input").value;
+    // add searched city to local storage
+    localStorage.setItem("cityInput", JSON.stringify(cityInput));
+    // empties search bar after button push
+    $("#search-input").val("");
+    
     console.log (cityInput);
 
-    // city search history
-    var searchHistory = $("#past-Search");
-    var pastSearch = document.createElement("li");
-    pastSearch.textContent = cityInput;
+    var lastCity = JSON.parse(localStorage.getItem("cityInput"));
+    var cityList = $("<button class='city-btn'>").text(lastCity);
+    var searchDiv = $("<div>");
+    searchDiv.append(cityList);
+    $("#past-Search").prepend(searchDiv);
     
-    searchHistory.append(pastSearch)
+    console.log(lastCity);
+    console.log(cityList);
+    console.log(searchDiv);
+
+    
 
 
-    console.log(searchHistory);
+
 
 
     // Main URL and API key variables
@@ -70,8 +81,20 @@ function getApi(event) {
         }).then(function (UVresponse) {
             // Add UVIndex value display to webpage
             $(".UVindex").text(UVresponse.value);
-        
+
+            // var UVvalue = UVresponse.value
+
+            //     if (UVvalue >= 6) {
+            //     $(".UVindex").addClass("high");
+            // } else if (UVvalue >= 3 && =< 6) {
+            //     $(".UVindex").addClass("moderate");
+            // } else (UVvalue < 2) 
+            //     $(".UVindex").addClass("low");
+            
         // console logs for checking information
+        // console.log("UV Index Value:")
+        // console.log(UVvalue);
+        console.log(UVresponse.value);
         console.log("UV Index Response:")
         console.log(UVindex);
         console.log("Icon Response:")
