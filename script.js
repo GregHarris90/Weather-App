@@ -93,7 +93,7 @@ function getApi(event) {
                 $(".UVindex").addClass("high");
             } else if (UVvalue >= 3 && 4 && 5 && 6) {
                 $(".UVindex").addClass("moderate");
-            } else (UVvalue < 2) 
+            } else (UVvalue <= 2) 
                 $(".UVindex").addClass("low");
         }) // END of then function for UVIndex data
     }) // END of then function for Main weather data
@@ -113,7 +113,7 @@ function getApi(event) {
     // })
 
   
-}
+} // END of getAPI function
 
 
 
