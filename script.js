@@ -28,24 +28,25 @@ function getApi(event) {
     // empties search bar after button push
     $("#search-input").val("");
     
-    console.log (cityInput);
-
+    // get city name from local storage
     var lastCity = JSON.parse(localStorage.getItem("cityInput"));
+    // create button, add class, and add text of city name
     var cityList = $("<button class='city-btn'>").text(lastCity);
+    // create div for search buttons 
     var searchDiv = $("<div>");
+    // append city button to div
     searchDiv.append(cityList);
+    // prepend city button/div to past searches
     $("#past-Search").prepend(searchDiv);
-    
-    console.log(lastCity);
-    console.log(cityList);
-    console.log(searchDiv);
 
-    
-
-
-
-
-
+    // press past-search button search again
+    $("#past-Search div button").click(function(event) {
+        event.preventDefault();
+        console.log("Clicked button!");
+        $("#search-input").val(cityInput);
+        getApi(event);
+        return;
+    })
     // Main URL and API key variables
     var API_key = "0b351b99223ceb38cc5d35d442babfe4"
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + API_key + "";
@@ -90,18 +91,7 @@ function getApi(event) {
             //     $(".UVindex").addClass("moderate");
             // } else (UVvalue < 2) 
             //     $(".UVindex").addClass("low");
-            
-        // console logs for checking information
-        // console.log("UV Index Value:")
-        // console.log(UVvalue);
-        console.log(UVresponse.value);
-        console.log("UV Index Response:")
-        console.log(UVindex);
-        console.log("Icon Response:")
-        console.log(iconURL);
-        console.log("Ajax Response:");
-        console.log(response);
-
+      
         })
     })
 
@@ -121,4 +111,8 @@ function getApi(event) {
 
   
 }
-})
+
+
+
+
+}) // END of document.ready function
