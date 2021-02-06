@@ -1,7 +1,6 @@
 // TODOS:
 // Append list of 5 day forecast at bottom of screen
-// Create condition for UV Index box color
-// Fix search history and connect to local storage
+// Fix search button issues 
 
 // ==========================================================================
 
@@ -41,7 +40,6 @@ function getApi(event) {
     // press past-search button search again
     $("#past-Search div button").click(function(event) {
         event.preventDefault();
-        console.log("Clicked button!");
         $("#search-input").val(cityInput);
         getApi(event);
         return;
@@ -98,19 +96,19 @@ function getApi(event) {
         }) // END of then function for UVIndex data
     }) // END of then function for Main weather data
 
+    // API URL variable for Forecast
+    var requestForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
 
-    // var forecast = document.querySelector("ul");
-    // var requestForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
+    $.ajax({
+        url: requestForecast,
+        method: "GET",
+    }).then(function (response) {
+        
 
-    // $.ajax({
-    //     url: requestForecast,
-    //     method: "GET",
-    // }).then(function (response) {
-    //     $(".forecast").
 
-    //     console.log("Forecast Response");
-    //     console.log(response);
-    // })
+        console.log("Forecast Response");
+        console.log(response);
+    })
 
   
 } // END of getAPI function

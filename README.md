@@ -39,8 +39,14 @@ https://gregharris90.github.io/Weather-App/
 
 *Main Page*
 
+![Main-Page](https://user-images.githubusercontent.com/73864182/107115622-d106e980-6822-11eb-806d-9e810c2d9166.png)
+
 *NEED IMAGES*
 
 # Overall Conclusion
+
+- This homework assignment has definitely been the most difficult one so far, as I still am trying to get better with Javascript and Jquery. I seem to understand the API calls and extracting information from them while also using local storage. But the challenge here has mostly been getting everything working with my Javascript and using it to display information on the webpage. 
+
+*I've almost completed all the requirements, I just need to finish my 5 day forecast and fix an issue with my buttons that generate under the search bar*
 
 - *NEED TO FINISH CONCLUSION*
