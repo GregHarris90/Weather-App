@@ -14,7 +14,6 @@ var currentDay = moment().format("MMMM Do YYYY");
 
 // event listener on search button
 searchForm.addEventListener("submit", getApi);
-
 console.log("Current Day:",currentDay);
 
 // function to input city name and fetch data
@@ -47,6 +46,7 @@ function getApi(event) {
         getApi(event);
         return;
     })
+
     // Main URL and API key variables
     var API_key = "0b351b99223ceb38cc5d35d442babfe4"
     var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityInput + "&units=imperial&appid=" + API_key + "";
@@ -82,18 +82,21 @@ function getApi(event) {
         }).then(function (UVresponse) {
             // Add UVIndex value display to webpage
             $(".UVindex").text(UVresponse.value);
+            // Remove previous color class on UVIndex
+            $(".UVindex").removeClass("high moderate low")
 
-            // var UVvalue = UVresponse.value
+            // store value of UVIndex into variable
+            var UVvalue = UVresponse.value
 
-            //     if (UVvalue >= 6) {
-            //     $(".UVindex").addClass("high");
-            // } else if (UVvalue >= 3 && =< 6) {
-            //     $(".UVindex").addClass("moderate");
-            // } else (UVvalue < 2) 
-            //     $(".UVindex").addClass("low");
-      
-        })
-    })
+            // conditional to set color class on UVIndex (high, moderate, low)
+                if (UVvalue >= 6) {
+                $(".UVindex").addClass("high");
+            } else if (UVvalue >= 3 && 4 && 5 && 6) {
+                $(".UVindex").addClass("moderate");
+            } else (UVvalue < 2) 
+                $(".UVindex").addClass("low");
+        }) // END of then function for UVIndex data
+    }) // END of then function for Main weather data
 
 
     // var forecast = document.querySelector("ul");
