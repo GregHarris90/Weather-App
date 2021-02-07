@@ -39,9 +39,29 @@ https://gregharris90.github.io/Weather-App/
 
 *Main Page*
 
-![Main-Page](https://user-images.githubusercontent.com/73864182/107115622-d106e980-6822-11eb-806d-9e810c2d9166.png)
+![Main-Front-Page](https://user-images.githubusercontent.com/73864182/107144182-48557f80-68ee-11eb-9db4-01c2acd67934.png)
 
-*NEED IMAGES*
+*Webpage Components*
+
+![Main-WebApp](https://user-images.githubusercontent.com/73864182/107144187-586d5f00-68ee-11eb-9238-568d1ca5a7dd.png)
+
+*On Search Displays Weather Information*
+
+![Main-Page](https://user-images.githubusercontent.com/73864182/107144199-7cc93b80-68ee-11eb-929d-d0bf7ea8e5e5.png)
+
+*Press Past Searches*
+
+![Press-Button](https://user-images.githubusercontent.com/73864182/107144215-95d1ec80-68ee-11eb-9c62-00d76b5e555b.png)
+
+*Searches for City Again*
+
+![Press-Button-Result](https://user-images.githubusercontent.com/73864182/107144224-a97d5300-68ee-11eb-9e18-1fc8a154172f.png)
+
+*Broken/Unfinished Parts of Webpage*
+
+![Broken-Parts](https://user-images.githubusercontent.com/73864182/107144239-c0bc4080-68ee-11eb-968c-ec1befb3db8b.png)
+
+
 
 # Overall Conclusion
 
@@ -49,4 +69,8 @@ https://gregharris90.github.io/Weather-App/
 
 *I've almost completed all the requirements, I just need to finish my 5 day forecast and fix an issue with my buttons that generate under the search bar*
 
-- *NEED TO FINISH CONCLUSION*
+- EDIT 02/07/21: So I've been working on this project for the last couple days and still couldn't get these last two part to work. I tried to fix my broken button when a city is searched again but can't figure it out. 
+
+- Also built my 5 day Forecast section but ran out of time to finish the API call to properly populate these cards with the correct information. Besides these two parts of the webpage I got everything mostly working. 
+
+- I'm going to go these these sections with my tutor this next Wednesday and figure out what I missed. Overall this homework assignment was very difficult as there were a lot of moving parts to complete. I tried my best, but wasn't able to get it all done! 

@@ -38,13 +38,14 @@ $(document).ready(function () {
         if ($("#" + lastCity).length === 0) {
             $("#past-Search").prepend(searchDiv);
         } else {
-            $(this).remove();
+            $("#past-Search").empty();
             // cityInput.empty();
         }
 
         console.log("last city:", lastCity);
         console.log("city input:", cityInput);
-        // }
+
+        // (PARTIALLY BROKEN)
         // press past-search button search again
         $("#past-Search div button").click(function (event) {
             event.preventDefault();
@@ -105,6 +106,7 @@ $(document).ready(function () {
             }) // END of then function for UVIndex data
 
             // API URL variable for Forecast
+            // (NOT FINISHED)
 
             var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
 
