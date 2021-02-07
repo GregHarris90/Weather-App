@@ -38,7 +38,7 @@ $(document).ready(function () {
         if ($("#" + lastCity).length === 0) {
             $("#past-Search").prepend(searchDiv);
         } else {
-            $("#past-Search").empty();
+            $(this).remove();
             // cityInput.empty();
         }
 
@@ -125,7 +125,7 @@ $(document).ready(function () {
 
                 // }
 
-             
+
 
             }) // END of Forecast function
         }) // END of then function for Main weather data
