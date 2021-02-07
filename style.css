@@ -6,18 +6,23 @@
 }
 
 #search-btn {
-    width: 35%;
-    padding: 10px;
+    width: 15%;
+    padding: 5px;
 }
 
 #search-form {
     margin: 25px;
 }
 
-.cityName {
-    
+#forecast {
+    font-size: smaller;
+}
 
-} 
+.card-deck{
+    height: fit-content;
+    width: fit-content;
+}
+
 h2{
     text-transform: uppercase;
     padding: 15px;

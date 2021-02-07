@@ -94,31 +94,59 @@ $(document).ready(function () {
                 } else (UVvalue <= 2)
                 $(".UVindex").addClass("low");
             }) // END of then function for UVIndex data
+
+            // API URL variable for Forecast
+
+            var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
+
+            $.ajax({
+                url: forecastURL,
+                method: "GET",
+            }).then(function (response) {
+                // $("#forecast").empty();
+
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i].dt);
+                    console.log(response[i].main.temp);
+                }
+
+                console.log(response);
+                var forcastInfo = response
+
+                console.log(forcastInfo);
+                console.log(cityInput);
+
+                // for (i = 0; i < forcastInfo.length; i++) {
+                //     console.log(forcastInfo[i]);
+                // }
+
+                // var cardDiv = $("<div>");
+                // var cardBody = $("<div>");
+                // var header = $("<div>");
+                // var icon = $("<img>");
+                // var temp = $("<p>");
+                // var humidity = $("<p>");
+
+                // cardDiv.attr("class", "card");
+                // cardBody.attr("class", "card-body");
+                // header.attr("class", "class-title");
+                // temp.attr("class", "card-text");
+                // humidity.attr("class", "card-text");
+
+                // header.text(currentDay);
+                // icon.attr("src", iconURL);
+                // temp.text(temp);
+                // humidity.text(humidity);
+
+                // cardBody.append(header).append(icon).append(temp).addClass(humidity);
+                // cardDiv.append(cardBody);
+                // cardDiv.append($("#forecast"));
+
+                // console.log("Forecast Response");
+                // console.log("temp:", temp);
+                // console.log("humidity:", humidity);
+                // console.log(response);
+            }) // END of Forecast function
         }) // END of then function for Main weather data
-
-        // API URL variable for Forecast
-        var requestForecast = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityInput + "&appid=" + API_key + "";
-
-        $.ajax({
-            url: requestForecast,
-            method: "GET",
-        }).then(function (response) {
-            $("#forecast").empty();
-
-            var list = response.list;
-
-
-
-
-            console.log("Forecast Response");
-            console.log(list);
-            console.log(response);
-        })
-
-
     } // END of getAPI function
-
-
-
-
 }) // END of document.ready function
