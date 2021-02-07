@@ -29,14 +29,22 @@ $(document).ready(function () {
         // get city name from local storage
         var lastCity = JSON.parse(localStorage.getItem("cityInput"));
         // create button, add class, and add text of city name
-        var cityList = $("<button class='city-btn'>").text(lastCity);
+        var cityList = $("<button class='city-btn'>").attr("id", lastCity).text(lastCity);
         // create div for search buttons 
         var searchDiv = $("<div>");
         // append city button to div
         searchDiv.append(cityList);
         // prepend city button/div to past searches
-        $("#past-Search").prepend(searchDiv);
+        if ($("#" + lastCity).length === 0) {
+            $("#past-Search").prepend(searchDiv);
+        } else {
+            $("#past-Search").empty();
+            // cityInput.empty();
+        }
 
+        console.log("last city:", lastCity);
+        console.log("city input:", cityInput);
+        // }
         // press past-search button search again
         $("#past-Search div button").click(function (event) {
             event.preventDefault();
@@ -44,6 +52,7 @@ $(document).ready(function () {
             getApi(event);
             return;
         })
+
 
         // Main URL and API key variables
         var API_key = "0b351b99223ceb38cc5d35d442babfe4"
@@ -103,49 +112,21 @@ $(document).ready(function () {
                 url: forecastURL,
                 method: "GET",
             }).then(function (response) {
-                // $("#forecast").empty();
 
-                for (var i = 0; i < response.length; i++) {
-                    console.log(response[i].dt);
-                    console.log(response[i].main.temp);
-                }
+                // var iconFore = " https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png";
 
                 console.log(response);
-                var forcastInfo = response
 
-                console.log(forcastInfo);
-                console.log(cityInput);
+                // for (var i = 0; i < response.length; i++) {
+                //     $("#fc-Date").text(response.list.dt_txt);
+                //     $("#fc-icon").attr("src", iconFore);
+                //     $("#fc-Temp").text(response.main.temp)
+                //     $("#fc-Humid").text(response.main.humidity);
 
-                // for (i = 0; i < forcastInfo.length; i++) {
-                //     console.log(forcastInfo[i]);
                 // }
 
-                // var cardDiv = $("<div>");
-                // var cardBody = $("<div>");
-                // var header = $("<div>");
-                // var icon = $("<img>");
-                // var temp = $("<p>");
-                // var humidity = $("<p>");
+             
 
-                // cardDiv.attr("class", "card");
-                // cardBody.attr("class", "card-body");
-                // header.attr("class", "class-title");
-                // temp.attr("class", "card-text");
-                // humidity.attr("class", "card-text");
-
-                // header.text(currentDay);
-                // icon.attr("src", iconURL);
-                // temp.text(temp);
-                // humidity.text(humidity);
-
-                // cardBody.append(header).append(icon).append(temp).addClass(humidity);
-                // cardDiv.append(cardBody);
-                // cardDiv.append($("#forecast"));
-
-                // console.log("Forecast Response");
-                // console.log("temp:", temp);
-                // console.log("humidity:", humidity);
-                // console.log(response);
             }) // END of Forecast function
         }) // END of then function for Main weather data
     } // END of getAPI function
