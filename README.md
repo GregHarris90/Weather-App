@@ -69,7 +69,7 @@ https://gregharris90.github.io/Weather-App/
 
 *I've almost completed all the requirements, I just need to finish my 5 day forecast and fix an issue with my buttons that generate under the search bar*
 
-- EDIT 02/07/21: So I've been working on this project for the last couple days and still couldn't get these last two part to work. I tried to fix my broken button when a city is searched again but can't figure it out. 
+- EDIT 02/07/21: So I've been working on this project for the last couple days and still couldn't get these last two parts to work. I tried to fix my broken button when a city is searched again but can't figure it out. 
 
 - Also built my 5 day Forecast section but ran out of time to finish the API call to properly populate these cards with the correct information. Besides these two parts of the webpage I got everything mostly working. 
 
